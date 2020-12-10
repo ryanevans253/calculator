@@ -1,3 +1,8 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+
 .nav{
 	margin-bottom: 200px;
 }
@@ -6,13 +11,29 @@
 	width: 100vw;
 	display: flex;
 	justify-content: space-around;
+	padding-left: 25px;
 }
 
+.img_column{
+	height: 500px;
+	width: auto;
+	object-fit: contain;
+}
+
+
 .column{
-	padding: 25px;
+	padding: 10px 25px 0px 10px;
 	min-width: 500px;
 	width: 100%;
 }
 form{
 	line-height: 12px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+#myChart{
+	margin-top: 200px;
 }

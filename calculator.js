@@ -63,6 +63,12 @@ function calculateMortgage() {
         //document.getElementById('monthlyPayment').innerHTML = "Monthly Payment" + monthlyPayment;
 }
 
+//test for updating mortgage 
+
+function updateMortgage() {
+    var testnumber = document.getElementById('monthlyPayment');
+    return monthlyPayment;
+}
 
 
 

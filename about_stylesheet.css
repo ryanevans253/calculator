@@ -1,0 +1,165 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+li, a, button {
+	font-weight: 400;
+	font-size: 16px;
+	text-decoration: none;
+}
+
+header {
+	width: 100%;
+	height: auto;
+	padding-top: 2%;
+	padding-left: 5%;
+	padding-right: 5%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+h1 {
+	font-size: 80px;
+	font-weight: 800;
+}
+
+form {
+	line-height: 12px;
+}
+
+#menu {
+	width: 25px;
+}
+
+.logo{ 
+	cursor: pointer;
+	max-height: 50px;
+ }
+
+ .nav_links {
+ 	list-style: none;
+ }
+
+ .nav_links li {
+ 	display: inline-block;
+ 	padding: 0px 20px;
+ }
+
+ .nav_links li a {
+ 	transition: all 0.3 ease 0s;
+ }
+
+  .nav_links li a:hover {
+ 	color: rgba(95, 91, 255, 1);
+ 	text-decoration: none;
+ }
+
+
+.img_column{
+	height: 500px;
+	width: auto;
+	object-fit: contain;
+}
+
+
+.hero {
+	display: flex;
+	max-height: 75vh;
+	padding: 35 50px;
+	align-items: center;
+
+}
+
+.main-content { 
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	padding-top: 8%;
+	padding-right: 10vw;
+	padding-left: 10vw;
+	flex-wrap: wrap;
+}
+
+/* this sets the background image in place at full vh*/
+.main_container { 
+	background-image: url(background.png);
+	background-size: cover;
+	background-position: center;
+	background-repeat: none;
+	height: 100vh;
+}
+
+.hero-text {
+	color: #fff;
+	width: 50%;
+}
+
+.hero-text h1 {
+	margin:0;
+	font-size: 50px;
+}
+
+#iphone {
+	width: 200px;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #5270fb;
+    border-color: #5270fb;
+}
+
+/* jumbotron with title and subtext from bootstrap*/
+.jumbotron {
+	/*background-color: rgb(246, 248, 255);*/
+	background-color: #ffffff;
+}
+
+.container {
+	color: #5270fb;
+}
+
+/*changes font on the "banner/jumbotron */
+.display-4 { 
+	font-size: 2.5rem;
+	margin-bottom: 35px;
+}
+
+.introduction {
+	display: block;
+	width: 90%;
+	margin: 20px auto;
+}
+
+
+.card-body {
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.card-title {
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
