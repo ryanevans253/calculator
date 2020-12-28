@@ -15,7 +15,7 @@
 	<!-- First chart canvas -->
 	<div class="two-column">
 		<div class="column">
-			<form>
+			<!-- <form> -->
 			  <div class="form-group">
 			    <label for="inputloanamount">Loan Amount</label>
 			    <input type="number" class="form-control form-control-sm" id="inputloanamount">
@@ -28,46 +28,54 @@
 			    <label for="inputloanterm">Loan Term in Years</label>
 			    <input type="number" class="form-control form-control-sm" id="inputloanterm">
 			  </div>
-			  <div class="form-group">
+			  
+
+			  <button type="button" class="btn btn-success" id="submitnums" onclick="calculateMortgage()">Calculate</button>
+			  <br>
+			  <br>
+			  <button type="button" class="btn btn-info" >Your Mortgage is $<p id="mortgageResult"></p></button>
+
+			  <br>
+			  <!-- <div class="form-group">
 			    <label for="inputmortgage">Monthly Mortgage</label>
-			    <input type="number" class="form-control form-control-sm form-control form-control-sm-sm" id="inputmortgage" onchange="updateMortgage()">
-			  </div>
-
-			  <button type="button" class="btn btn-success" onclick="calculateMortgage()">Calculate</button>
-
-			</form>			
+			    <input type="number" class="form-control form-control-sm form-control form-control-sm-sm" id="inputmortgage">
+			  </div> -->
+			<!-- </form>			 -->
 			<br>
 
 
 			<form>
-			  
+			  <div class="form-group">
+			    <label for="inputmortgage">Monthly Mortgage</label>
+			    <input type="number" class="form-control form-control-sm" id="inputmortgage" oninput="updateAll(myChart)">
+			  </div>
 			  <div class="form-group">
 			    <label for="inputtaxes">Property Taxes</label>
-			    <input type="number" class="form-control form-control-sm" id="inputtaxes">
+			    <input type="number" class="form-control form-control-sm" id="inputtaxes" onchange="updateAll(myChart)">
 			  </div>
 			  <div class="form-group">
 			    <label for="inputinsurance">Insurance</label>
-			    <input type="number" class="form-control form-control-sm" id="inputinsurance">
+			    <input type="number" class="form-control form-control-sm" id="inputinsurance" onchange="updateAll(myChart)">
 			  </div>
 			  <div class="form-group">
 			    <label for="inputmaintenance">Maintenance</label>
-			    <input type="number" class="form-control form-control-sm" id="inputmaintenance">
+			    <input type="number" class="form-control form-control-sm" id="inputmaintenance" onchange="updateAll(myChart)">
 			  </div>
 			  <div class="form-group">
 			    <label for="inputcapex">Capital Expenditures</label>
-			    <input type="number" class="form-control form-control-sm" id="inputcapex">
+			    <input type="number" class="form-control form-control-sm" id="inputcapex" onchange="updateAll(myChart)">
 			  </div>
 			  <div class="form-group">
 			    <label for="inputvacancy">Vacancy</label>
-			    <input type="number" class="form-control form-control-sm" id="inputvacancy">
+			    <input type="number" class="form-control form-control-sm" id="inputvacancy" onchange="updateAll(myChart)">
 			  </div>
 			  <div class="form-group">
 			    <label for="inputpropertymanagement">Property Management</label>
-			    <input type="number" class="form-control form-control-sm" id="inputpropertymanagement">
+			    <input type="number" class="form-control form-control-sm" id="inputpropertymanagement" onchange="updateAll(myChart)">
 			  </div>
 			  <div class="form-group">
 			    <label for="inpututilities">Utilities</label>
-			    <input type="number" class="form-control form-control-sm" id="inpututilities">
+			    <input type="number" class="form-control form-control-sm" id="inpututilities" onchange="updateAll(myChart)">
 			  </div>
 				
 			</form>

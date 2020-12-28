@@ -44,109 +44,119 @@
 		</div>
 	</div>
 	<div class="introduction">
-			
-		
-			<div class="row">
-			  <div class="col-sm-4">
-			    <div class="card shadow p-3 mb-5 bg-white rounded text-center">
-			      <div class="card-body">
-			        <h5 class="card-title">Rentals</h5>
-			        <p class="card-text">Analyze buy and hold investment properties to optimize cash flow and/or appreciation.</p>
-			        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-			      </div>
-			    </div>
-			  </div>
-			  <div class="col-sm-4">
-			    <div class="card shadow p-3 mb-5 bg-white rounded text-center">
-			      <div class="card-body">
-			        <h5 class="card-title">Flips</h5>
-			        <p class="card-text">Analyze your next flip project to maximize margins and minimize surprises.</p>
-			        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-			      </div>
-			    </div>
-			  </div>
-			  <div class="col-sm-4">
-			    <div class="card shadow p-3 mb-5 bg-white rounded text-center">
-			      <div class="card-body">
-			        <h5 class="card-title">Research</h5>
-			        <p class="card-text">Save previously analyzed properties and set alerts to reach out for off-market analysis.</p>
-			        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-			      </div>
-			    </div>
-			  </div>
-			</div>
-
+		<div class="row">
+		  <div class="col-sm-4">
+		    <div class="card shadow p-3 mb-5 bg-white rounded text-center">
+		      <div class="card-body">
+		        <h5 class="card-title">Rentals</h5>
+		        <p class="card-text">Analyze buy and hold investment properties to optimize cash flow and/or appreciation.</p>
+		        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-4">
+		    <div class="card shadow p-3 mb-5 bg-white rounded text-center">
+		      <div class="card-body">
+		        <h5 class="card-title">Flips</h5>
+		        <p class="card-text">Analyze your next flip project to maximize margins and minimize surprises.</p>
+		        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+		      </div>
+		    </div>
+		  </div>
+		  <div class="col-sm-4">
+		    <div class="card shadow p-3 mb-5 bg-white rounded text-center">
+		      <div class="card-body">
+		        <h5 class="card-title">Research</h5>
+		        <p class="card-text">Save previously analyzed properties and set alerts to reach out for off-market analysis.</p>
+		        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+		      </div>
+		    </div>
+		  </div>
 		</div>
+	</div>
+
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container text-center">
+			<h2 class="display-4">Buy and Hold Calculator</h2>
+			<p class="lead">Try running a free report on your buy-and-hold rental property</p>
+		</div>
+	</div>
 
 	<div style="width: 100%; height: 25px;"></div>
 	<!-- First chart canvas -->
-	<div class="two-column">
-		<div class="column">
-			<form>
-			  <div class="form-group">
-			    <label for="inputloanamount">Loan Amount</label>
-			    <input type="number" class="form-control form-control-sm" id="inputloanamount">
-			  </div>
-			  <div class="form-group">
-			    <label for="inputinterestrate">Interest Rate %</label>
-			    <input type="number" class="form-control form-control-sm" id="inputinterestrate">
-			  </div>
-			  <div class="form-group">
-			    <label for="inputloanterm">Loan Term in Years</label>
-			    <input type="number" class="form-control form-control-sm" id="inputloanterm">
-			  </div>
-			  <div class="form-group">
-			    <label for="inputmortgage">Monthly Mortgage</label>
-			    <input type="number" class="form-control form-control-sm form-control form-control-sm-sm" id="inputmortgage" onchange="updateMortgage()">
-			  </div>
+		<div class="full-width-container">
+			<div class="two-column">
+				<div class="column">
+					<div class="form-group">
+					    <label for="inputloanamount">Loan Amount</label>
+					    <input type="number" class="form-control form-control-sm" id="inputloanamount">
+					  </div>
+					  <div class="form-group">
+					    <label for="inputinterestrate">Interest Rate %</label>
+					    <input type="number" class="form-control form-control-sm" id="inputinterestrate">
+					  </div>
+					  <div class="form-group">
+					    <label for="inputloanterm">Loan Term in Years</label>
+					    <input type="number" class="form-control form-control-sm" id="inputloanterm">
+					  </div>
+					  <button type="button" class="btn btn-success" id="submitnums" onclick="calculateMortgage()">Calculate</button>
+					  <br>
+					  <br>
+					  <button type="button" class="btn btn-info" >Your Mortgage is $<p id="mortgageResult"></p></button>
 
-			  <button type="button" class="btn btn-success" onclick="calculateMortgage()">Calculate</button>
+					  <br>
+					  <!-- <div class="form-group">
+					    <label for="inputmortgage">Monthly Mortgage</label>
+					    <input type="number" class="form-control form-control-sm form-control form-control-sm-sm" id="inputmortgage">
+					  </div> -->
+					<!-- </form>			 -->
+					<br>
 
-			</form>			
-			<br>
 
+					<form>
+					  <div class="form-group">
+					    <label for="inputmortgage">Monthly Mortgage</label>
+					    <input type="number" class="form-control form-control-sm" id="inputmortgage" oninput="updateAll(myChart)">
+					  </div>
+					  <div class="form-group">
+					    <label for="inputtaxes">Property Taxes</label>
+					    <input type="number" class="form-control form-control-sm" id="inputtaxes" onchange="updateAll(myChart)">
+					  </div>
+					  <div class="form-group">
+					    <label for="inputinsurance">Insurance</label>
+					    <input type="number" class="form-control form-control-sm" id="inputinsurance" onchange="updateAll(myChart)">
+					  </div>
+					  <div class="form-group">
+					    <label for="inputmaintenance">Maintenance</label>
+					    <input type="number" class="form-control form-control-sm" id="inputmaintenance" onchange="updateAll(myChart)">
+					  </div>
+					  <div class="form-group">
+					    <label for="inputcapex">Capital Expenditures</label>
+					    <input type="number" class="form-control form-control-sm" id="inputcapex" onchange="updateAll(myChart)">
+					  </div>
+					  <div class="form-group">
+					    <label for="inputvacancy">Vacancy</label>
+					    <input type="number" class="form-control form-control-sm" id="inputvacancy" onchange="updateAll(myChart)">
+					  </div>
+					  <div class="form-group">
+					    <label for="inputpropertymanagement">Property Management</label>
+					    <input type="number" class="form-control form-control-sm" id="inputpropertymanagement" onchange="updateAll(myChart)">
+					  </div>
+					  <div class="form-group">
+					    <label for="inpututilities">Utilities</label>
+					    <input type="number" class="form-control form-control-sm" id="inpututilities" onchange="updateAll(myChart)">
+					  </div>
+						
+					</form>
+					<button type="submit" class="btn btn-success" onclick="updateAll(myChart)">Submit</button>
 
-			<form>
-			  
-			  <div class="form-group">
-			    <label for="inputtaxes">Property Taxes</label>
-			    <input type="number" class="form-control form-control-sm" id="inputtaxes">
-			  </div>
-			  <div class="form-group">
-			    <label for="inputinsurance">Insurance</label>
-			    <input type="number" class="form-control form-control-sm" id="inputinsurance">
-			  </div>
-			  <div class="form-group">
-			    <label for="inputmaintenance">Maintenance</label>
-			    <input type="number" class="form-control form-control-sm" id="inputmaintenance">
-			  </div>
-			  <div class="form-group">
-			    <label for="inputcapex">Capital Expenditures</label>
-			    <input type="number" class="form-control form-control-sm" id="inputcapex">
-			  </div>
-			  <div class="form-group">
-			    <label for="inputvacancy">Vacancy</label>
-			    <input type="number" class="form-control form-control-sm" id="inputvacancy">
-			  </div>
-			  <div class="form-group">
-			    <label for="inputpropertymanagement">Property Management</label>
-			    <input type="number" class="form-control form-control-sm" id="inputpropertymanagement">
-			  </div>
-			  <div class="form-group">
-			    <label for="inpututilities">Utilities</label>
-			    <input type="number" class="form-control form-control-sm" id="inpututilities">
-			  </div>
-				
-			</form>
-			<button type="submit" class="btn btn-success" onclick="updateAll(myChart)">Submit</button>
+				</div>
+				<div class="column">
+					<canvas id="myChart"></canvas>
+				</div>
 
+			</div>
 		</div>
-		<div class="column">
-			<canvas id="myChart"></canvas>
-		</div>
-
-	</div>
-
 
 	
 	<script src="calculator.js"></script>

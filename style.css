@@ -8,23 +8,17 @@ body{
 }
 
 .two-column{
-	width: 100vw;
+	width: 90%;
 	display: flex;
-	justify-content: space-around;
-	padding-left: 25px;
-}
+	margin: 0 auto;
+	border: 1px solid blue;
 
-.img_column{
-	height: 500px;
-	width: auto;
-	object-fit: contain;
 }
-
 
 .column{
 	padding: 10px 25px 0px 10px;
-	min-width: 500px;
 	width: 100%;
+	border: 3px solid green;
 }
 form{
 	line-height: 12px;
@@ -36,4 +30,10 @@ form{
 
 #myChart{
 	margin-top: 200px;
+}
+
+
+/*Keeps the mortgage amount number button on a single line*/
+#mortgageResult {
+	display: inline;
 }

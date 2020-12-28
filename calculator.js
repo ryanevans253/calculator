@@ -31,13 +31,7 @@ let interestRate = document.getElementById('inputinterestrate');
 let loanTerm = document.getElementById('inputloanterm');
 let mortgageAmount = loanAmount * interestRate; //needs a var on the front
 
-
-
-
-
-
 function calculateMortgage() {
-
 
     var loanAmount = parseFloat(document.getElementById("inputloanamount").value);
         //principal = parseInt(principal);
@@ -58,9 +52,10 @@ function calculateMortgage() {
     console.log(monthlyPayment);
 
 
-    // document.getElementById("payment").value = monthlyPayment;
+// quick test
+    document.getElementById("inputmortgage").value = monthlyPayment;
+    document.getElementById("mortgageResult").innerHTML = monthlyPayment;
 
-        //document.getElementById('monthlyPayment').innerHTML = "Monthly Payment" + monthlyPayment;
 }
 
 //test for updating mortgage 
@@ -70,16 +65,13 @@ function updateMortgage() {
     return monthlyPayment;
 }
 
-
-
 function changeSize(chart) {
     chart.options.cutoutPercentage = 70;
     chart.update();
 }
 
-
 function updateAll(chart) {
-    // chart.data.datasets[0].data[0] = monthlyPayment.value;
+    chart.data.datasets[0].data[0] = document.getElementById('inputmortgage').value;
     chart.data.datasets[0].data[1] = document.getElementById('inputtaxes').value;
     chart.data.datasets[0].data[2] = document.getElementById('inputinsurance').value;
     chart.data.datasets[0].data[3] = document.getElementById('inputmaintenance').value;
@@ -89,7 +81,6 @@ function updateAll(chart) {
     chart.data.datasets[0].data[7] = document.getElementById('inpututilities').value;
     chart.update();
 }
-
 
 // Unnecessary code below
 

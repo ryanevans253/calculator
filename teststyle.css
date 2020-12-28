@@ -184,10 +184,20 @@ form{
 
 #myChart{
 	margin-top: 200px;
+	max-width: 300px;
 }
 
+/*keeps the button on one line*/
+#mortgageResult {
+	display: inline;
+}
 
+.full-width-container {
+	display: block;
+	width: 100%;
+	background-color: rgba(247, 249, 255, 1);
 
+}
 
 
 
