@@ -85,7 +85,106 @@
 		<div class="column">
 			<canvas id="myChart"></canvas>
 		</div>
+	</div>
 
+	<!-- Second form and chart section -->
+	<div class="two-column">
+		<div class="column">
+			<form>
+			  <h2>Property Information</h2>
+			  <div class="form-group">
+			  	<label for="inputProjectName">Project Name</label>
+				<input type="email" class="form-control" id="inputProjectName">
+			  </div>
+			    
+			  <div class="form-group">
+			    <label for="inputAddress">Address</label>
+			    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+			  </div>
+			  <div class="form-group">
+			    <label for="inputAddress2">Address 2</label>
+			    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+			  </div>
+			  <div class="form-row">
+			    <div class="form-group col-md-6">
+			      <label for="inputCity">City</label>
+			      <input type="text" class="form-control" id="inputCity">
+			    </div>
+			    <div class="form-group col-md-4">
+			      <label for="inputState">State</label>
+			      <select id="inputState" class="form-control">
+			        <option selected>Choose...</option>
+			        <option>...</option>
+			      </select>
+			    </div>
+			    <div class="form-group col-md-2">
+			      <label for="inputZip">Zip</label>
+			      <input type="text" class="form-control" id="inputZip">
+			    </div>
+			  </div>
+			  <h2>Acquisition Costs</h2>
+			  <div class="form-row">
+				<div class="form-group col-md-6">
+				  <label for="inputPurchasePrice">Purchase Price</label>
+				  <input type="number" class="form-control" id="inputPurchasePrice">
+				</div>
+				<div class="form-group col-md-6">
+				  <label for="inputClosingCosts">Closing Costs</label>
+				  <input type="number" class="form-control" id="inputClosingCosts">
+				</div>
+			  </div>
+			  <h2>Disposition Costs</h2>
+			  <div class="form-row">
+				<div class="form-group col-md-4">
+				  <label for="inputSalePrice">Estimated Sale Price</label>
+				  <input type="number" class="form-control" id="inputSalePrice">
+				</div>
+				<div class="form-group col-md-4">
+				  <label for="inputSaleClosingCosts">Sale Closing Costs</label>
+				  <input type="number" class="form-control" id="inputSaleClosingCosts">
+				</div>
+			  <div class="form-group col-md-4">
+				  <label for="inputCommission">Agent Commissions</label>
+				  <input type="number" class="form-control" id="inputCommission">
+				</div>
+			  </div>
+			  <h2>Estimates</h2>
+			  <div class="form-row">
+				<div class="form-group col-md-6">
+				  <label for="inputARV">After Repair Value (ARV)</label>
+				  <input type="number" class="form-control" id="inputARV">
+				</div>
+				<div class="form-group col-md-6">
+				  <label for="inputDesiredProfit">Desired Profit</label>
+				  <input type="number" class="form-control" id="inputDesiredProfit">
+				</div>
+			  </div>
+			  <h2>Rehab Estimates</h2>
+			  <div class="form-row">
+				<div class="form-group col-md-4">
+				  <label for="inputRepair">Repair Costs</label>
+				  <input type="number" class="form-control" id="inputRepair">
+				</div>
+				<div class="form-group col-md-4">
+				  <label for="inputHoldingCost">Holding Cost</label>
+				  <input type="number" class="form-control" id="inputHoldingCost">
+				</div>
+				<div class="form-group col-md-4">
+				  <label for="inputHoldingTime">Holding Time (Months)</label>
+				  <input type="number" class="form-control" id="inputHoldingTime">
+				</div>
+			  </div>
+
+
+			  <button type="submit" class="btn btn-primary">Sign in</button>
+			</form>
+		</div>
+		<div class="column">
+			<div class="chartContainer">
+				<canvas id="flipChart"></canvas>
+			</div>
+
+		</div>
 	</div>
 
 

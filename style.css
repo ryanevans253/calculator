@@ -10,15 +10,15 @@ body{
 .two-column{
 	width: 90%;
 	display: flex;
-	margin: 0 auto;
-	border: 1px solid blue;
+	margin: 10px auto;
+	border: 1px solid black;
 
 }
 
 .column{
-	padding: 10px 25px 0px 10px;
+	padding: 10px 25px 10px 10px;
 	width: 100%;
-	border: 3px solid green;
+
 }
 form{
 	line-height: 12px;
@@ -30,10 +30,27 @@ form{
 
 #myChart{
 	margin-top: 200px;
+
+}
+
+.column h2 {
+	color: #5270fb;
+	margin-bottom: 20px;
+}
+
+.chartContainer {
+	margin-top: 200px;
 }
 
 
 /*Keeps the mortgage amount number button on a single line*/
 #mortgageResult {
 	display: inline;
+}
+
+
+/*placeholder for second column of second form*/
+
+.placeholder {
+	width: 40vw;
 }
