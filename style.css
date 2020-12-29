@@ -12,13 +12,11 @@ body{
 	display: flex;
 	margin: 10px auto;
 	border: 1px solid black;
-
 }
 
 .column{
 	padding: 10px 25px 10px 10px;
 	width: 100%;
-
 }
 form{
 	line-height: 12px;
@@ -48,9 +46,3 @@ form{
 	display: inline;
 }
 
-
-/*placeholder for second column of second form*/
-
-.placeholder {
-	width: 40vw;
-}

@@ -126,57 +126,61 @@
 			  <div class="form-row">
 				<div class="form-group col-md-6">
 				  <label for="inputPurchasePrice">Purchase Price</label>
-				  <input type="number" class="form-control" id="inputPurchasePrice">
+				  <input type="number" class="form-control" id="inputPurchasePrice" value="100000">
 				</div>
 				<div class="form-group col-md-6">
 				  <label for="inputClosingCosts">Closing Costs</label>
-				  <input type="number" class="form-control" id="inputClosingCosts">
+				  <input type="number" class="form-control" id="inputClosingCosts" value="3000">
 				</div>
 			  </div>
 			  <h2>Disposition Costs</h2>
 			  <div class="form-row">
-				<div class="form-group col-md-4">
-				  <label for="inputSalePrice">Estimated Sale Price</label>
-				  <input type="number" class="form-control" id="inputSalePrice">
-				</div>
-				<div class="form-group col-md-4">
+				<div class="form-group col-md-6">
 				  <label for="inputSaleClosingCosts">Sale Closing Costs</label>
-				  <input type="number" class="form-control" id="inputSaleClosingCosts">
+				  <input type="number" class="form-control" id="inputSaleClosingCosts" value="2000">
 				</div>
-			  <div class="form-group col-md-4">
-				  <label for="inputCommission">Agent Commissions</label>
-				  <input type="number" class="form-control" id="inputCommission">
+			  <div class="form-group col-md-6">
+				  <label for="inputCommission">Agent Commissions (%)</label>
+				  <input type="number" class="form-control" id="inputCommission" value="3">
 				</div>
 			  </div>
 			  <h2>Estimates</h2>
 			  <div class="form-row">
 				<div class="form-group col-md-6">
 				  <label for="inputARV">After Repair Value (ARV)</label>
-				  <input type="number" class="form-control" id="inputARV">
+				  <input type="number" class="form-control" id="inputARV" value="150000">
 				</div>
 				<div class="form-group col-md-6">
 				  <label for="inputDesiredProfit">Desired Profit</label>
-				  <input type="number" class="form-control" id="inputDesiredProfit">
+				  <input type="number" class="form-control" id="inputDesiredProfit" value="12000">
 				</div>
 			  </div>
 			  <h2>Rehab Estimates</h2>
 			  <div class="form-row">
 				<div class="form-group col-md-4">
 				  <label for="inputRepair">Repair Costs</label>
-				  <input type="number" class="form-control" id="inputRepair">
+				  <input type="number" class="form-control" id="inputRepair" value="3500">
 				</div>
 				<div class="form-group col-md-4">
-				  <label for="inputHoldingCost">Holding Cost</label>
-				  <input type="number" class="form-control" id="inputHoldingCost">
+				  <label for="inputHoldingCost">Monthly Holding Cost</label>
+				  <input type="number" class="form-control" id="inputHoldingCost" value="500">
 				</div>
 				<div class="form-group col-md-4">
 				  <label for="inputHoldingTime">Holding Time (Months)</label>
-				  <input type="number" class="form-control" id="inputHoldingTime">
+				  <input type="number" class="form-control" id="inputHoldingTime" value="3">
 				</div>
 			  </div>
 
+			  <button type="button" class="btn btn-primary" onclick="calculateMaxOffer()">Calculate Results</button>
 
-			  <button type="submit" class="btn btn-primary">Sign in</button>
+			  <h2>Maximum Offer Price</h2>
+			  <div class="form-group">
+			    <label for="maxOfferPrice">Maximum Offer Price</label>
+			    <input type="number" class="form-control" id="maxOfferPrice">
+			  </div>
+
+
+			  
 			</form>
 		</div>
 		<div class="column">
