@@ -86,7 +86,7 @@ form {
 
 /* this sets the background image in place at full vh*/
 .main_container { 
-	background-image: url(background.png);
+	background-image: url(images/background.png);
 	background-size: cover;
 	background-position: center;
 	background-repeat: none;
