@@ -140,7 +140,7 @@ form {
 	align-content: center;
 	align-items: center;
 	justify-content: center;
-}
+	}
 
 .card-title {
 }
@@ -199,15 +199,36 @@ form{
 
 }
 
+/*css for card title on reports*/
+
+.card-body h2 {
+	
+	color: #5270fb;
+}
+
+.row {
+	margin: 0 100px;
+}
 
 
 
+.no-border {
+	border: none;
+}
 
+.bottom-border {
+	border-bottom: 1px solid #e5e5e5;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	padding-bottom: 10px;
+}
 
+.flip-chart-container {
+	margin: 30px auto;
 
-
-
-
+	position: relative;
+	max-width: 60vw;
+}
 
 
 

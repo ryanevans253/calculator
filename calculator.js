@@ -92,17 +92,33 @@ function calculateMaxOffer() {
     let monthlyHoldingCost = parseFloat(document.getElementById('inputHoldingCost').value);
     let holdingTime = parseFloat(document.getElementById('inputHoldingTime').value);
 
+// caluclations
 
     var totalHoldingCost = monthlyHoldingCost * holdingTime;
     var totalRehabCost = totalHoldingCost + totalRepairs;
     var totalAcquisitionCost = purchasePrice + purchaseClosingCost;
     var totalDispositionCost = (arv * (saleCommission / 100)) + saleClosingCost;
 
+    var totalProfit = arv - totalAcquisitionCost - totalRehabCost - totalDispositionCost;
+    var totalExpenses = arv - totalProfit;
 
-    var maxOffer = arv - totalAcquisitionCost - totalRehabCost - totalDispositionCost - desiredProfit;
+    var maxOffer = arv - purchaseClosingCost - totalRehabCost - totalDispositionCost - desiredProfit; 
+
+    var isDealProfitable = false;
+    if (totalProfit >= desiredProfit) {
+        isDealProfitable = true;
+        console.log("this deal is profitable");
+    }
+    else {
+        console.log("This is not a profitable deal.");
+    }
+    
+ 
 
     console.log(purchasePrice);
-    console.log(maxOffer);
+    console.log("profit is " + totalProfit);
+    console.log("total expense " + totalExpenses);
+    console.log("max offer is " + maxOffer);
 
     document.getElementById('maxOfferPrice').innerHTML = maxOffer;
 }
