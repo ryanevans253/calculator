@@ -86,7 +86,7 @@ form {
 
 /* this sets the background image in place at full vh*/
 .main_container { 
-	background-image: url(images/background.png);
+	background-image: url(images/pizza.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: none;
@@ -154,6 +154,12 @@ body{
 .nav{
 	margin-bottom: 200px;
 }
+/*didn't get this piece to work to hold the two column div*/
+/*.main-container {
+    background-color: grey;
+	width: 80%;
+	display: block;
+}*/
 
 .two-column{
 	width: 100vw;
@@ -229,6 +235,80 @@ form{
 	position: relative;
 	max-width: 60vw;
 }
+
+/*css for box that displays estimated profit on fix and flip report*/
+
+.estimatedProfit {
+	background: #1C85E8;
+	width: 100%;
+	padding: 10%;
+	border-radius: 4px;
+	min-height: 350px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	margin-bottom: 30px;
+	color: #fff;
+}
+
+.estimateHighlight {
+    opacity: .7;
+}
+
+.totalEstimate {
+    font-weight: 600;
+    font-size: 3em;
+}
+
+.bottomTotals {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.divider {
+
+}
+
+#max-offer-price {
+    display: flex;
+    flex-wrap: wrap;
+    opacity: 1;
+    font-weight: 200;
+    font-size: 1.5em;
+}
+
+#rehab-plus-expenses {
+	display: flex;
+    flex-wrap: wrap;
+    opacity: 1;
+    font-weight: 200;
+    font-size: 1.5em;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

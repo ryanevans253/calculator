@@ -27,7 +27,7 @@ function calculateMaxOffer() {
     var totalDispositionCost = (arv * (saleCommission / 100)) + saleClosingCost;
 
     var totalProfit = arv - totalAcquisitionCost - totalRehabCost - totalDispositionCost;
-    var totalExpenses = arv - totalProfit;
+    var totalExpenses = arv - totalProfit - purchasePrice;
 
     var maxOffer = arv - purchaseClosingCost - totalRehabCost - totalDispositionCost - desiredProfit; 
 
@@ -47,8 +47,12 @@ function calculateMaxOffer() {
     console.log("total expense " + totalExpenses);
     console.log("max offer is " + maxOffer);
 
-    document.getElementById('maxOfferPrice').innerHTML = maxOffer;
-    document.getElementById('propertyAddress').innerHTML = document.getElementById('inputAddress');
+    document.getElementById('est-profit').innerHTML = "$" + totalProfit.toLocaleString("en-US");
+    document.getElementById('max-offer-price').innerHTML = "$" + maxOffer.toLocaleString("en-US");
+    document.getElementById('rehab-plus-expenses').innerHTML = "$" + totalExpenses.toLocaleString("en-US");
+
+    // document.getElementById('maxOfferPrice').innerHTML = maxOffer;
+    // document.getElementById('propertyAddress').innerHTML = document.getElementById('inputAddress');
 }
 
 
@@ -64,6 +68,9 @@ var flipChart = new Chart(flipper, {
     type: 'doughnut',
     options: {
         cutoutPercentage: 25,
+        legend: {
+            position: 'bottom',
+        },
         title: {
             display: true,
             text: 'Fix and Flip Expenses',
@@ -77,7 +84,7 @@ var flipChart = new Chart(flipper, {
 
         datasets: [{
             label: '% of Sales Price',
-            data: [30,10,4,18,7,13],
+            data: [1,1,1,1,1,1],
             backgroundColor: [
                 'rgba(62, 162, 168)',
                 'rgba(240, 90, 31)',
@@ -92,3 +99,29 @@ var flipChart = new Chart(flipper, {
         }]
     },
 });
+
+// returns the calculated total holding costs from the rehab estimates section. 
+function getTotalHoldingCost() {
+    let monthlyHoldingCost = parseFloat(document.getElementById('inputHoldingCost').value);
+    let holdingTime = parseFloat(document.getElementById('inputHoldingTime').value);
+    var totalHoldingCost = monthlyHoldingCost * holdingTime;
+    return totalHoldingCost;
+}
+
+function updateAll(chart) {
+    chart.data.datasets[0].data[0] = document.getElementById('inputPurchasePrice').value;
+    chart.data.datasets[0].data[1] = document.getElementById('inputClosingCosts').value;
+    chart.data.datasets[0].data[2] = document.getElementById('inputSaleClosingCosts').value;
+    chart.data.datasets[0].data[3] = document.getElementById('inputCommission').value;
+    chart.data.datasets[0].data[4] = document.getElementById('inputRepair').value;
+    chart.data.datasets[0].data[5] = getTotalHoldingCost(); 
+    chart.update();
+}
+
+
+
+
+
+
+
+

@@ -136,6 +136,7 @@ var flipChart = new Chart(flipper, {
     type: 'doughnut',
     options: {
         cutoutPercentage: 25,
+        },
         title: {
             display: true,
             text: 'Fix and Flip Expenses',
