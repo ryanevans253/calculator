@@ -86,7 +86,7 @@ form {
 
 /* this sets the background image in place at full vh*/
 .main_container { 
-	background-image: url(images/pizza.jpg);
+	background-image: url('images/yellow.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: none;
@@ -287,7 +287,17 @@ form{
     font-size: 1.5em;
 }
 
+.double-column {
+	width: 100vw;
+	padding: 0 30px;
+	height: 300px;
+}
 
+.column {
+	width: 100%;
+	height: 0 auto;
+	border: 1px solid blue;
+}
 
 
 
