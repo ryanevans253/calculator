@@ -80,11 +80,11 @@ var flipChart = new Chart(flipper, {
         },
     },
     data: {
-        labels: ['Purchase Price', 'Purchase Closing Costs', 'Sale Closing Costs', 'Agent Commission', 'Repair Costs', 'Holding Cost'],
+        labels: ['Purchase Closing Costs', 'Sale Closing Costs', 'Agent Commission', 'Repair Costs', 'Holding Cost'],
 
         datasets: [{
             label: '% of Sales Price',
-            data: [1,1,1,1,1,1],
+            data: [1,1,1,1,1],
             backgroundColor: [
                 'rgba(62, 162, 168)',
                 'rgba(240, 90, 31)',
@@ -109,7 +109,7 @@ function getTotalHoldingCost() {
 }
 
 function updateAll(chart) {
-    chart.data.datasets[0].data[0] = document.getElementById('inputPurchasePrice').value;
+    // chart.data.datasets[0].data[0] = document.getElementById('inputPurchasePrice').value;
     chart.data.datasets[0].data[1] = document.getElementById('inputClosingCosts').value;
     chart.data.datasets[0].data[2] = document.getElementById('inputSaleClosingCosts').value;
     chart.data.datasets[0].data[3] = document.getElementById('inputCommission').value;
