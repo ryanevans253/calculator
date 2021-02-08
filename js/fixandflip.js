@@ -3,7 +3,7 @@ function calculateMaxOffer() {
     //flip calculator functions go here
     //acquisition
     let purchasePrice = parseFloat(document.getElementById('inputPurchasePrice').value);
-    let purchaseClosingCost = parseFloat(document.getElementById('inputClosingCosts').value);
+    let purchaseClosingCost = parseFloat(document.getElementById('inputPurchaseClosingCosts').value);
     // let totalAcquisitionCost = purchasePrice + purchaseClosingCost; - i put this down below
 
     //disposition
@@ -25,6 +25,7 @@ function calculateMaxOffer() {
     var totalRehabCost = totalHoldingCost + totalRepairs;
     var totalAcquisitionCost = purchasePrice + purchaseClosingCost;
     var totalDispositionCost = (arv * (saleCommission / 100)) + saleClosingCost;
+    var totalCommission = purchasePrice * (saleCommission / 100);
 
     var totalProfit = arv - totalAcquisitionCost - totalRehabCost - totalDispositionCost;
     var totalExpenses = arv - totalProfit - purchasePrice;
@@ -55,13 +56,6 @@ function calculateMaxOffer() {
     // document.getElementById('propertyAddress').innerHTML = document.getElementById('inputAddress');
 }
 
-
-
-
-
-
-
-
 // second chart for flips
 var flipper = document.getElementById('flipChart').getContext('2d');
 var flipChart = new Chart(flipper, {
@@ -80,7 +74,7 @@ var flipChart = new Chart(flipper, {
         },
     },
     data: {
-        labels: ['Purchase Closing Costs', 'Sale Closing Costs', 'Agent Commission', 'Repair Costs', 'Holding Cost'],
+        labels: ['Purchase Closing Costs', 'Sale Closing Costs', 'Repair Costs', 'Sales Commission', 'Holding Cost'],
 
         datasets: [{
             label: '% of Sales Price',
@@ -108,20 +102,19 @@ function getTotalHoldingCost() {
     return totalHoldingCost;
 }
 
-function updateAll(chart) {
-    // chart.data.datasets[0].data[0] = document.getElementById('inputPurchasePrice').value;
-    chart.data.datasets[0].data[1] = document.getElementById('inputClosingCosts').value;
-    chart.data.datasets[0].data[2] = document.getElementById('inputSaleClosingCosts').value;
-    chart.data.datasets[0].data[3] = document.getElementById('inputCommission').value;
-    chart.data.datasets[0].data[4] = document.getElementById('inputRepair').value;
-    chart.data.datasets[0].data[5] = getTotalHoldingCost(); 
-    chart.update();
+function calculateCommission() {
+    let totalCommission = (document.getElementById('inputCommission').value /100) * document.getElementById('inputARV').value;
+    return totalCommission;
 }
 
-
-
-
-
+function updateAll(chart) {
+    chart.data.datasets[0].data[0] = document.getElementById('inputPurchaseClosingCosts').value;
+    chart.data.datasets[0].data[1] = document.getElementById('inputSaleClosingCosts').value;
+    chart.data.datasets[0].data[2] = document.getElementById('inputRepair').value;
+    chart.data.datasets[0].data[3] = calculateCommission();
+    chart.data.datasets[0].data[4] = getTotalHoldingCost();
+    chart.update();
+}
 
 
 
