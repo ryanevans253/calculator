@@ -41,8 +41,6 @@ function calculateMaxOffer() {
         console.log("This is not a profitable deal.");
     }
     
- 
-
     console.log(purchasePrice);
     console.log("profit is " + totalProfit);
     console.log("total expense " + totalExpenses);
@@ -111,7 +109,7 @@ function updateAll(chart) {
     chart.data.datasets[0].data[0] = document.getElementById('inputPurchaseClosingCosts').value;
     chart.data.datasets[0].data[1] = document.getElementById('inputSaleClosingCosts').value;
     chart.data.datasets[0].data[2] = document.getElementById('inputRepair').value;
-    chart.data.datasets[0].data[3] = calculateCommission();
+    chart.data.datasets[0].data[3] = calculateCommission().toFixed(0);
     chart.data.datasets[0].data[4] = getTotalHoldingCost();
     chart.update();
 }
