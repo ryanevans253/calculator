@@ -162,22 +162,24 @@ body{
 }*/
 
 .two-column{
-	width: 100vw;
+	width: 80vw;
+	margin: 0 auto;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-around;
 	padding-left: 25px;
 }
 
 .img_column{
-	height: 500px;
+	min-height: 500px;
 	width: auto;
 	object-fit: contain;
 }
 
 
 .column{
-	padding: 10px 25px 0px 10px;
-	min-width: 500px;
+	padding: 10px;
+	max-width: 500px;
 	width: 100%;
 }
 form{
