@@ -302,15 +302,15 @@ form{
 
 .jumbotron {
 	padding: 1rem 1rem;
+	background-color: #1C85E8;
+	margin-bottom: 0;
+
 }
 
 
-
-
-
-
-
-
+.white-text {
+	color: white;
+}
 
 
 
