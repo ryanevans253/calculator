@@ -86,7 +86,7 @@ form {
 
 /* this sets the background image in place at full vh*/
 .main_container { 
-	background-image: url('images/yellow.jpg');
+	background-image: none; /*url('images/pizza.jpg'); - corrupted file or something? */
 	background-size: cover;
 	background-position: center;
 	background-repeat: none;

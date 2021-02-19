@@ -1,45 +1,32 @@
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
-    type: 'doughnut',
-    title: 'myfjdksafdsa',
-    options: {
-        cutoutPercentage: 30,
-        legend: {
-            position: 'bottom',
-        },
-        title: {
-            display: true,
-            text: 'Expense Breakdown',
-            fontSize: 30,
-            padding: 10,
-            fontColor: 'rgba(95, 91, 255, 1)',
-        },   
-    },
-
-    data: {
-        labels: ['Mortgage', 'Property Tax', 'Insurance', 'Maintenance', 'CapEx', 'Vacancy', 'Property Management', 'Utilities'],
-        
-        datasets: [{
-            label: '% of expenses',
-            data: [25, 12, 4, 6, 7, 7, 5, 6],
-            backgroundColor: [
-                'rgba(62, 162, 168)',
-                'rgba(240, 90, 31)',
-                'rgba(255, 198, 46)',
-                'rgba(92, 92, 91)',
-                'rgba(163, 207, 209)',
-                'rgba(248, 160, 112)',
-                'rgba(255, 228, 166)',
-                'rgba(155, 158, 160)'
-            ],
-            borderWidth: 0
-        }]
-    },    
-});
+//al new
 
 
 
-//property rental expenses calculator
+// let homePrice = document.getElementById('homePrice');
+// let downPayment = document.getElementById('downPayment');
+// let interestRate = document.getElementById('interestRate');
+// let loanLength = document.getElementById('loanLength');
+
+function calculateMonthlyMortgage() {
+
+    let homePrice = parseFloat(document.getElementById('homePrice').value);
+    let downPayment = parseFloat(document.getElementById('downPayment').value);
+    let interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
+    let loanLength = parseFloat(document.getElementById('loanLength').value) * 12;
+    let loanAmount = homePrice - downPayment;
+
+    var monthlyPayment = (loanAmount * interestRate) / (1 - (Math.pow((1 + interestRate) , loanLength * -1)));
+        monthlyPayment = monthlyPayment.toFixed(2);
+
+    console.log(monthlyPayment, loanAmount, interestRate)
+}
+
+
+
+
+///////////////////////
+
+// mortgage calculator
 let loanAmount = document.getElementById('inputloanamount'); //might need a .value
 let interestRate = document.getElementById('inputinterestrate');
 let loanTerm = document.getElementById('inputloanterm');
@@ -126,50 +113,6 @@ function calculateMaxOffer() {
 
 
 
-
-
-
-
-// second chart for flips
-var flipper = document.getElementById('flipChart').getContext('2d');
-var flipChart = new Chart(flipper, {
-    type: 'doughnut',
-    options: {
-        cutoutPercentage: 25,
-        },
-        title: {
-            display: true,
-            text: 'Fix and Flip Expenses',
-            fontSize: 30,
-            padding: 10,
-            fontColor: 'rgba(95, 91, 255, 1)',
-        },
-    },
-    data: {
-        labels: ['Purchase Price', 'Purchase Closing Costs', 'Sale Closing Costs', 'Agent Commission', 'Repair Costs', 'Holding Cost'],
-
-        datasets: [{
-            label: '% of Sales Price',
-            data: [30,10,4,18,7,13],
-            backgroundColor: [
-                'rgba(62, 162, 168)',
-                'rgba(240, 90, 31)',
-                'rgba(255, 198, 46)',
-                'rgba(92, 92, 91)',
-                'rgba(163, 207, 209)',
-                'rgba(248, 160, 112)',
-                'rgba(255, 228, 166)',
-                'rgba(155, 158, 160)'
-            ],
-            borderWidth: 0,
-        }]
-    },
-});
-
-
-
-
-
 //test for updating mortgage 
 
 function updateMortgage() {
@@ -193,11 +136,3 @@ function updateAll(chart) {
     chart.data.datasets[0].data[7] = document.getElementById('inpututilities').value;
     chart.update();
 }
-
-// Unnecessary code below
-
-// function updateData(chart) {
-//     chart.data.labels[0] = 'new title';
-//     chart.data.datasets[0].data[0] = 25;
-//     chart.update();
-// }

@@ -43,47 +43,37 @@
 						<form>
 						    <h2>Home Price</h2>
 					   	    <div class="form-group">
-								<input type="text" class="form-control" id="inputPurchasePrice" value="100000">
+								<input type="text" class="form-control" id="homePrice" value="100000">
 							</div>
 						    <h2>Down Payment</h2>
 					   	    <div class="form-group">
-								<input type="text" class="form-control" id="inputPurchasePrice" value="100000">
+								<input type="text" class="form-control" id="downPayment" value="20000">
 							</div>
 							<h2>Interest rate</h2>
 					   	    <div class="form-group">
-								<input type="text" class="form-control" id="inputPurchasePrice" value="100000">
+								<input type="text" class="form-control" id="interestRate" value="4">
 							</div>
 							<h2>Length of loan</h2>
 					   	    <div class="form-group">
-								<input type="text" class="form-control" id="inputPurchasePrice" value="100000">
+								<input type="text" class="form-control" id="loanLength" value="30">
 							</div>
 
-
-
-
-						  
-
-						   
-						  
-
-						  <button type="button" id="calculateflip" class="btn btn-primary btn-block" onclick="calculateMaxOffer(flipChart); updateAll(flipChart)">Calculate Results</button> 
+						  <button type="button" id="calculateflip" class="btn btn-primary btn-block" onclick="calculateMonthlyMortgage()">Calculate Results</button> 
 
 						</form>
 					</div>
 					<div class="column">
 						<div class="estimatedProfit">
-							<p class="estimateHighlight">Estimated Profit</p>
+							<p class="estimateHighlight">Monthly Payment</p>
 							<p class="totalEstimate" id="est-profit">$</p>
 							<div class="bottomTotals">
-								<p class="estimateHighlight">Max Offer Price <span id="max-offer-price">$</span></p>
+								<p class="estimateHighlight">Total Mortgage Interest<span id="max-offer-price">$</span></p>
 								<div class="divider"></div>
 								<p class="estimateHighlight">Rehab and Expenses<span id="rehab-plus-expenses">$</span></p>
 							</div>
 						</div> 
 
-						<div class="chartContainer">
-							<canvas id="flipChart"></canvas>
-						</div>
+						
 
 					</div>
 				</div>
