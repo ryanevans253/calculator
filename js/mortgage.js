@@ -14,11 +14,16 @@ function calculateMonthlyMortgage() {
     let interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
     let loanLength = parseFloat(document.getElementById('loanLength').value) * 12;
     let loanAmount = homePrice - downPayment;
+    let percentageRate = interestRate / 1200;
 
-    var monthlyPayment = (loanAmount * interestRate) / (1 - (Math.pow((1 + interestRate) , loanLength * -1)));
+    var monthlyPayment = (loanAmount * percentageRate) / (1 - (Math.pow((1 + percentageRate) , loanLength * -1)));
         monthlyPayment = monthlyPayment.toFixed(2);
 
     console.log(monthlyPayment, loanAmount, interestRate)
+
+    document.getElementById('monthlyMortgagePayment').innerHTML = "$" + monthlyPayment;
+    document.getElementById('totalInterest').innerHTML = "$ total interest here";
+    document.getElementById('totalPayments').innerHTML = "$ total payments";
 }
 
 
@@ -111,28 +116,9 @@ function calculateMaxOffer() {
 }
 
 
-
-
 //test for updating mortgage 
 
 function updateMortgage() {
     var testnumber = document.getElementById('monthlyPayment');
     return monthlyPayment;
-}
-// shouldn't be necessary code. i think this was a test
-function changeSize(chart) {
-    chart.options.cutoutPercentage = 70;
-    chart.update();
-}
-
-function updateAll(chart) {
-    chart.data.datasets[0].data[0] = document.getElementById('inputmortgage').value;
-    chart.data.datasets[0].data[1] = document.getElementById('inputtaxes').value;
-    chart.data.datasets[0].data[2] = document.getElementById('inputinsurance').value;
-    chart.data.datasets[0].data[3] = document.getElementById('inputmaintenance').value;
-    chart.data.datasets[0].data[4] = document.getElementById('inputcapex').value;
-    chart.data.datasets[0].data[5] = document.getElementById('inputvacancy').value;
-    chart.data.datasets[0].data[6] = document.getElementById('inputpropertymanagement').value;
-    chart.data.datasets[0].data[7] = document.getElementById('inpututilities').value;
-    chart.update();
 }
