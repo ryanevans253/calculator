@@ -1,4 +1,3 @@
-//al new
 
 
 
@@ -7,24 +6,48 @@
 // let interestRate = document.getElementById('interestRate');
 // let loanLength = document.getElementById('loanLength');
 
-function calculateMonthlyMortgage() {
 
-    let homePrice = parseFloat(document.getElementById('homePrice').value);
-    let downPayment = parseFloat(document.getElementById('downPayment').value);
-    let interestRate = parseFloat(document.getElementById('interestRate').value) / 100;
-    let loanLength = parseFloat(document.getElementById('loanLength').value) * 12;
-    let loanAmount = homePrice - downPayment;
-    let percentageRate = interestRate / 1200;
 
-    var monthlyPayment = (loanAmount * percentageRate) / (1 - (Math.pow((1 + percentageRate) , loanLength * -1)));
-        monthlyPayment = monthlyPayment.toFixed(2);
 
-    console.log(monthlyPayment, loanAmount, interestRate)
+let homePrice = parseFloat(document.getElementById('homePrice').value);
+let downPayment = parseFloat(document.getElementById('downPayment').value);
 
-    document.getElementById('monthlyMortgagePayment').innerHTML = "$" + monthlyPayment;
-    document.getElementById('totalInterest').innerHTML = "$ total interest here";
-    document.getElementById('totalPayments').innerHTML = "$ total payments";
+var monthlyPayment;
+let principal = homePrice - downPayment;
+let interestRate = (parseFloat(document.getElementById('interestRate').value) / 12) / 100;
+let numberOfPayments = parseFloat(document.getElementById('loanLength').value) * 12; 
+let percentageRate = interestRate.toFixed(4);
+
+
+
+monthlyPayment =  calculateMonthlyMortgage(principal, numberOfPayments, interestRate);
+console.log(monthlyPayment);
+
+function calculateMonthlyMortgage(principal, numberOfPayments, interestRate) {
+
+    return principal * interestRate * (Math.pow(1 + interestRate, numberOfPayments)) / (Math.pow(1 + interestRate, numberOfPayments) - 1);
+
+    // (loanAmount * percentageRate) / (1 - (Math.pow((1 + percentageRate) , loanLength * -1)));
+    // monthlyPayment = monthlyPayment.toFixed(2);
+
+    // monthlyPayment = calculateMonthly
+
 }
+
+
+console.log(monthlyPayment, loanAmount, interestRate)
+
+// testers 
+console.log("monthly payment = " + monthlyPayment);
+console.log("homePrice = " + homePrice);
+console.log("principal = " + principal);
+console.log("percentageRate = " + percentageRate);
+console.log("number of patments = " + numberOfPayments);
+
+
+document.getElementById('monthlyMortgagePayment').innerHTML = "$" + monthlyPayment;
+document.getElementById('totalInterest').innerHTML = "$ total interest here";
+
 
 
 
@@ -56,69 +79,6 @@ function calculateMortgage() {
         monthlyPayment = monthlyPayment.toFixed(2);
 
     console.log(monthlyPayment);
-
-
-// quick test
-    document.getElementById("inputmortgage").value = monthlyPayment;
-    document.getElementById("mortgageResult").innerHTML = monthlyPayment;
-
-}
-
-function calculateMaxOffer() {
-    //flip calculator functions go here
-    //acquisition
-    let purchasePrice = parseFloat(document.getElementById('inputPurchasePrice').value);
-    let purchaseClosingCost = parseFloat(document.getElementById('inputClosingCosts').value);
-    // let totalAcquisitionCost = purchasePrice + purchaseClosingCost; - i put this down below
-
-    //disposition
-    let saleClosingCost = parseFloat(document.getElementById('inputSaleClosingCosts').value);
-    let saleCommission = parseFloat(document.getElementById('inputCommission').value);
-
-    //profitability estimates
-    var arv = parseFloat(document.getElementById('inputARV').value);
-    let desiredProfit = parseFloat(document.getElementById('inputDesiredProfit').value);
-
-    //rehab estimates
-    let totalRepairs = parseFloat(document.getElementById('inputRepair').value);
-    let monthlyHoldingCost = parseFloat(document.getElementById('inputHoldingCost').value);
-    let holdingTime = parseFloat(document.getElementById('inputHoldingTime').value);
-
-// caluclations
-
-    var totalHoldingCost = monthlyHoldingCost * holdingTime;
-    var totalRehabCost = totalHoldingCost + totalRepairs;
-    var totalAcquisitionCost = purchasePrice + purchaseClosingCost;
-    var totalDispositionCost = (arv * (saleCommission / 100)) + saleClosingCost;
-
-    var totalProfit = arv - totalAcquisitionCost - totalRehabCost - totalDispositionCost;
-    var totalExpenses = arv - totalProfit;
-
-    var maxOffer = arv - purchaseClosingCost - totalRehabCost - totalDispositionCost - desiredProfit; 
-
-    var isDealProfitable = false;
-    if (totalProfit >= desiredProfit) {
-        isDealProfitable = true;
-        console.log("this deal is profitable");
-    }
-    else {
-        console.log("This is not a profitable deal.");
-    }
-    
- 
-
-    console.log(purchasePrice);
-    console.log("profit is " + totalProfit);
-    console.log("total expense " + totalExpenses);
-    console.log("max offer is " + maxOffer);
-
-    document.getElementById('maxOfferPrice').innerHTML = maxOffer;
 }
 
 
-//test for updating mortgage 
-
-function updateMortgage() {
-    var testnumber = document.getElementById('monthlyPayment');
-    return monthlyPayment;
-}
