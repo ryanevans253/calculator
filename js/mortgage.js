@@ -21,7 +21,7 @@ let percentageRate = interestRate.toFixed(4);
 
 
 monthlyPayment =  calculateMonthlyMortgage(principal, numberOfPayments, interestRate);
-console.log(monthlyPayment);
+console.log(monthlyPayment.toFixed(2));
 
 function calculateMonthlyMortgage(principal, numberOfPayments, interestRate) {
 
@@ -35,7 +35,6 @@ function calculateMonthlyMortgage(principal, numberOfPayments, interestRate) {
 }
 
 
-console.log(monthlyPayment, loanAmount, interestRate)
 
 // testers 
 console.log("monthly payment = " + monthlyPayment);
@@ -45,7 +44,7 @@ console.log("percentageRate = " + percentageRate);
 console.log("number of patments = " + numberOfPayments);
 
 
-document.getElementById('monthlyMortgagePayment').innerHTML = "$" + monthlyPayment;
+document.getElementById('monthlyMortgagePayment').innerHTML = "$" + monthlyPayment.toFixed(0);
 document.getElementById('totalInterest').innerHTML = "$ total interest here";
 
 
@@ -55,10 +54,10 @@ document.getElementById('totalInterest').innerHTML = "$ total interest here";
 ///////////////////////
 
 // mortgage calculator
-let loanAmount = document.getElementById('inputloanamount'); //might need a .value
-let interestRate = document.getElementById('inputinterestrate');
-let loanTerm = document.getElementById('inputloanterm');
-let mortgageAmount = loanAmount * interestRate; //needs a var on the front
+// let loanAmount = document.getElementById('inputloanamount'); //might need a .value
+// let interestRate = document.getElementById('inputinterestrate');
+// let loanTerm = document.getElementById('inputloanterm');
+// let mortgageAmount = loanAmount * interestRate; //needs a var on the front
 
 function calculateMortgage() {
 
