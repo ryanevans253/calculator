@@ -1,14 +1,5 @@
 
 
-
-// let homePrice = document.getElementById('homePrice');
-// let downPayment = document.getElementById('downPayment');
-// let interestRate = document.getElementById('interestRate');
-// let loanLength = document.getElementById('loanLength');
-
-
-
-
 let homePrice = parseFloat(document.getElementById('homePrice').value);
 let downPayment = parseFloat(document.getElementById('downPayment').value);
 
@@ -36,6 +27,7 @@ function calculateMonthlyMortgage(principal, numberOfPayments, interestRate) {
 
 
 
+
 // testers 
 console.log("monthly payment = " + monthlyPayment);
 console.log("homePrice = " + homePrice);
@@ -44,7 +36,7 @@ console.log("percentageRate = " + percentageRate);
 console.log("number of patments = " + numberOfPayments);
 
 
-document.getElementById('monthlyMortgagePayment').innerHTML = "$" + monthlyPayment.toFixed(0);
+// document.getElementById('monthlyMortgagePayment').innerHTML = "$" + monthlyPayment.toFixed(0);
 document.getElementById('totalInterest').innerHTML = "$ total interest here";
 
 
