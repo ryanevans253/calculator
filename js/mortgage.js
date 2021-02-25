@@ -1,28 +1,22 @@
 
 
-// let homePrice = parseFloat(document.getElementById('homePrice').value);
-// let downPayment = parseFloat(document.getElementById('downPayment').value);
+let homePrice = parseFloat(document.getElementById('homePrice').value);
+let downPayment = parseFloat(document.getElementById('downPayment').value);
 
-// let monthlyPayment;
-// let principal = homePrice - downPayment;
-// let interestRate = (parseFloat(document.getElementById('interestRate').value) / 12) / 100;
-// let numberOfPayments = parseFloat(document.getElementById('loanLength').value) * 12; 
-// let percentageRate = interestRate.toFixed(4);
-
+let monthlyPayment;
+let principal = homePrice - downPayment;
+let interestRate = (parseFloat(document.getElementById('interestRate').value) / 12) / 100;
+let numberOfPayments = parseFloat(document.getElementById('loanLength').value) * 12; 
+let percentageRate = interestRate.toFixed(4);
+console.log(principal + " principal")
 
 
 // monthlyPayment =  calculateMonthlyMortgage(principal, numberOfPayments, interestRate);
 // console.log(monthlyPayment.toFixed(2));
 
 function calculateMonthlyMortgage(principal, numberOfPayments, interestRate) {
-    let homePrice = parseFloat(document.getElementById('homePrice').value);
-    let downPayment = parseFloat(document.getElementById('downPayment').value);
 
-    let monthlyPayment;
-    let principal = homePrice - downPayment;
-    let interestRate = (parseFloat(document.getElementById('interestRate').value) / 12) / 100;
-    let numberOfPayments = parseFloat(document.getElementById('loanLength').value) * 12; 
-    let percentageRate = interestRate.toFixed(4);
+
 
 
     return principal * interestRate * (Math.pow(1 + interestRate, numberOfPayments)) / (Math.pow(1 + interestRate, numberOfPayments) - 1);
