@@ -25,15 +25,12 @@ function calculateMonthlyMortgage(principal, numberOfPayments, interestRate) {
     let percentageRate = interestRate.toFixed(4);
 
 
-
-
     return principal * interestRate * (Math.pow(1 + interestRate, numberOfPayments)) / (Math.pow(1 + interestRate, numberOfPayments) - 1);
 
     // (loanAmount * percentageRate) / (1 - (Math.pow((1 + percentageRate) , loanLength * -1)));
     // monthlyPayment = monthlyPayment.toFixed(2);
 
     // monthlyPayment = calculateMonthly
-
 }
 
 
