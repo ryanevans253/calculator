@@ -58,17 +58,24 @@
 					   	    <div class="form-group">
 								<input type="text" class="form-control" id="loanLength" value="30">
 							</div>
-							<div class="dropdown">
-							  <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
-							    Dropdown link
-							  </a>
-
-							  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							    <li><a class="dropdown-item" href="#">Action</a></li>
-							    <li><a class="dropdown-item" href="#">Another action</a></li>
-							    <li><a class="dropdown-item" href="#">Something else here</a></li>
-							  </ul>
+							<a href="#" onclick="showOptions()">Show Advanced Options</a>
+							
+							<div id="advancedOptions">
+							    <h2>Property Taxes</h2>
+						   	    <div class="form-group">
+									<input type="text" class="form-control" id="propertyTaxes" value="20000">
+								</div>
+								<h2>Insurance</h2>
+						   	    <div class="form-group">
+									<input type="text" class="form-control" id="propertyInsurance" value="4">
+								</div>
+								<h2>HOA Fees</h2>
+						   	    <div class="form-group">
+									<input type="text" class="form-control" id="HOAFees" value="30">
+								</div>
 							</div>
+
+
 
 						  <button type="button" id="calculateflip" class="btn btn-primary btn-block" onclick="calculateMonthlyMortgage()">Calculate Results</button> 
 

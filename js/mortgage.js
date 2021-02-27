@@ -7,18 +7,36 @@ function calculateMonthlyMortgage() {
     let interestRate = (parseFloat(document.getElementById('interestRate').value) / 12) / 100;
     let numberOfPayments = parseFloat(document.getElementById('loanLength').value) * 12; 
     let percentageRate = interestRate.toFixed(4);
-    // console.log(principal + " principal")
 
 
     monthlyPayment = principal * interestRate * (Math.pow(1 + interestRate, numberOfPayments)) / (Math.pow(1 + interestRate, numberOfPayments) - 1);
 
 
-    // return principal * interestRate * (Math.pow(1 + interestRate, numberOfPayments)) / (Math.pow(1 + interestRate, numberOfPayments) - 1);
-
-    // (loanAmount * percentageRate) / (1 - (Math.pow((1 + percentageRate) , loanLength * -1)));
-    // monthlyPayment = monthlyPayment.toFixed(2);
-
-    // monthlyPayment = calculateMonthly
     document.getElementById('monthlyMortgagePayment').innerHTML = "$" + monthlyPayment.toFixed(0);
 }
 
+function calculateAdvancedOptionsj() {
+    let propertyTaxes = parseFloat(document.getElementById('propertyTaxes').value) / 12;
+    let propertyInsurance = parseFloat(document.getElementById('propertyInsurance').value) / 12;
+    let hoaFees = parseFloat(document.getElementById('HOAFees').value) / 12; 
+}
+
+
+// function showOptions() {
+//   var x = document.getElementById("advancedOptions");
+//   if (x.style.display === "none") {
+//     x.style.display = "block";
+//   } else {
+//     x.style.display = "none";
+//   }
+// }
+
+
+function showOptions() {
+  var x = document.getElementById("advancedOptions");
+  if (x.style.display !== "none") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
