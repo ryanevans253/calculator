@@ -1,9 +1,22 @@
-function calculateMonthlyMortgage() {
-    let homePrice = parseFloat(document.getElementById('homePrice').value);
-    let downPayment = parseFloat(document.getElementById('downPayment').value);
+let homePrice = parseFloat(document.getElementById('homePrice').value);
+let downPayment = parseFloat(document.getElementById('downPayment').value);
 
-    let monthlyPayment;
-    let principal = homePrice - downPayment;
+let monthlyPayment;
+let principal = homePrice - downPayment;
+
+
+let propertyTaxes = parseFloat(document.getElementById('propertyTaxes').value) / 12;
+let propertyInsurance = parseFloat(document.getElementById('propertyInsurance').value) / 12;
+let hoaFees = parseFloat(document.getElementById('HOAFees').value) / 12; 
+
+// function calculateInsurance() {
+//     let propertyInsurance = parseFloat(document.getElementById('propertyInsurance').value) / 12;
+
+//     return propertyInsurance;
+// }
+
+function calculateMonthlyMortgage() {
+ 
     let interestRate = (parseFloat(document.getElementById('interestRate').value) / 12) / 100;
     let numberOfPayments = parseFloat(document.getElementById('loanLength').value) * 12; 
     let percentageRate = interestRate.toFixed(4);
@@ -13,13 +26,11 @@ function calculateMonthlyMortgage() {
 
 
     document.getElementById('monthlyMortgagePayment').innerHTML = "$" + monthlyPayment.toFixed(0);
+    return monthlyPayment
 }
 
 function calculateAdvancedOptions() {
-    let propertyTaxes = parseFloat(document.getElementById('propertyTaxes').value) / 12;
-    let propertyInsurance = parseFloat(document.getElementById('propertyInsurance').value) / 12;
-    let hoaFees = parseFloat(document.getElementById('HOAFees').value) / 12; 
-
+   
     let homePrice = parseFloat(document.getElementById('homePrice').value);
     let downPayment = parseFloat(document.getElementById('downPayment').value);
 
@@ -38,11 +49,6 @@ function calculateAdvancedOptions() {
     document.getElementById('monthlyMortgagePayment').innerHTML = "$" + totalMonthlyPayment.toFixed(0);
 
 }
-
-function principalAndInterest () {
-    let prin
-}
-
 
 
 
@@ -94,11 +100,11 @@ var mortgageChart = new Chart(donutMortgageChart, {
     },
 });
 
-
+// need to calculate these numbers after button is pushed. currently calculating on pageload. 
 function updateAll(chart) {
-    chart.data.datasets[0].data[0] = document.getElementById('inputPurchaseClosingCosts').value;
-    chart.data.datasets[0].data[1] = document.getElementById('inputSaleClosingCosts').value;
-    chart.data.datasets[0].data[2] = document.getElementById('inputRepair').value;
-    chart.data.datasets[0].data[3] = calculateCommission().toFixed(0);
+    chart.data.datasets[0].data[0] = calculateMonthlyMortgage().toFixed(0);
+    chart.data.datasets[0].data[1] = propertyInsurance;
+    chart.data.datasets[0].data[2] = propertyTaxes;
+    chart.data.datasets[0].data[3] = hoaFees;
     chart.update();
 }
