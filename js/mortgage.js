@@ -4,7 +4,6 @@ let downPayment = parseFloat(document.getElementById('downPayment').value);
 let monthlyPayment;
 let principal = homePrice - downPayment;
 
-
 let propertyTaxes = parseFloat(document.getElementById('propertyTaxes').value) / 12;
 let propertyInsurance = parseFloat(document.getElementById('propertyInsurance').value) / 12;
 let hoaFees = parseFloat(document.getElementById('HOAFees').value) / 12; 
@@ -21,16 +20,13 @@ function calculateMonthlyMortgage() {
     let numberOfPayments = parseFloat(document.getElementById('loanLength').value) * 12; 
     let percentageRate = interestRate.toFixed(4);
 
-
     monthlyPayment = principal * interestRate * (Math.pow(1 + interestRate, numberOfPayments)) / (Math.pow(1 + interestRate, numberOfPayments) - 1);
-
 
     document.getElementById('monthlyMortgagePayment').innerHTML = "$" + monthlyPayment.toFixed(0);
     return monthlyPayment
 }
 
 function calculateAdvancedOptions() {
-   
     let homePrice = parseFloat(document.getElementById('homePrice').value);
     let downPayment = parseFloat(document.getElementById('downPayment').value);
 
@@ -40,18 +36,11 @@ function calculateAdvancedOptions() {
     let numberOfPayments = parseFloat(document.getElementById('loanLength').value) * 12; 
     let percentageRate = interestRate.toFixed(4);
 
-
     monthlyPayment = principal * interestRate * (Math.pow(1 + interestRate, numberOfPayments)) / (Math.pow(1 + interestRate, numberOfPayments) - 1);
 
     let totalMonthlyPayment = monthlyPayment + propertyTaxes + propertyInsurance + hoaFees;
-
-
     document.getElementById('monthlyMortgagePayment').innerHTML = "$" + totalMonthlyPayment.toFixed(0);
-
 }
-
-
-
 
 function showOptions() {
   var x = document.getElementById("advancedOptions");
@@ -61,7 +50,6 @@ function showOptions() {
     x.style.display = "block";
   }
 }
-
 
 var donutMortgageChart = document.getElementById('mortgageChart').getContext('2d');
 var mortgageChart = new Chart(donutMortgageChart, {
@@ -81,19 +69,15 @@ var mortgageChart = new Chart(donutMortgageChart, {
     },
     data: {
         labels: ['Principal and Interest', 'Insurance', 'Property Tax', 'HOA Fees'],
-
         datasets: [{
             label: '% of Sales Price',
             data: [1,1,1,1],
             backgroundColor: [
-                'rgba(97,245,245)',                        // 'rgba(62, 162, 168)',
-                'rgba(98,195,245)',                        // 'rgba(240, 90, 31)',
-                'rgba(97,147,245)',                        // 'rgba(255, 198, 46)',
-                'rgba(98,96,244)',                        // 'rgba(92, 92, 91)',
-                // 'rgba(99,49,245)',                        // 'rgba(163, 207, 209)',
-                                        // 'rgba(248, 160, 112)',
-                                        // 'rgba(255, 228, 166)',
-                                        // 'rgba(155, 158, 160)'
+                'rgba(97,245,245)',                        
+                'rgba(98,195,245)',                       
+                'rgba(97,147,245)',                       
+                'rgba(98,96,244)',                       
+            
             ],
             borderWidth: 0,
         }]
