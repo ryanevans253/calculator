@@ -29,7 +29,6 @@ function calculateMonthlyMortgage() {
 function calculateAdvancedOptions() {
     let homePrice = parseFloat(document.getElementById('homePrice').value);
     let downPayment = parseFloat(document.getElementById('downPayment').value);
-
     let monthlyPayment;
     let principal = homePrice - downPayment;
     let interestRate = (parseFloat(document.getElementById('interestRate').value) / 12) / 100;
@@ -77,7 +76,6 @@ var mortgageChart = new Chart(donutMortgageChart, {
                 'rgba(98,195,245)',                       
                 'rgba(97,147,245)',                       
                 'rgba(98,96,244)',                       
-            
             ],
             borderWidth: 0,
         }]
