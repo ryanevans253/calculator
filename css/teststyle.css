@@ -121,12 +121,12 @@ form {
 
 .container {
 	color: #5270fb;
+	padding: 15px;
 }
 
 /*changes font on the "banner/jumbotron */
 .display-4 { 
 	font-size: 2.5rem;
-	margin-bottom: 35px;
 }
 
 .introduction {
