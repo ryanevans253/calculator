@@ -1,158 +1,155 @@
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	font-family: 'Open Sans', sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
 }
 
-li, a, button {
-	font-weight: 400;
-	font-size: 16px;
-	text-decoration: none;
+li,
+a,
+button {
+  font-weight: 400;
+  font-size: 16px;
+  text-decoration: none;
 }
 
 header {
-	width: 100%;
-	height: auto;
-	padding-top: 2%;
-	padding-left: 5%;
-	padding-right: 5%;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
+  width: 100%;
+  height: auto;
+  padding-top: 2%;
+  padding-left: 5%;
+  padding-right: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 h1 {
-	font-size: 80px;
-	font-weight: 800;
+  font-size: 80px;
+  font-weight: 800;
 }
 
 form {
-	line-height: 12px;
+  line-height: 12px;
 }
 
 #menu {
-	width: 25px;
+  width: 25px;
 }
 
-.logo{ 
-	cursor: pointer;
-	max-height: 50px;
- }
-
- .nav_links {
- 	list-style: none;
- }
-
- .nav_links li {
- 	display: inline-block;
- 	padding: 0px 20px;
- }
-
- .nav_links li a {
- 	transition: all 0.3 ease 0s;
- }
-
-  .nav_links li a:hover {
- 	color: rgba(95, 91, 255, 1);
- 	text-decoration: none;
- }
-
-
-.img_column{
-	height: 500px;
-	width: auto;
-	object-fit: contain;
+.logo {
+  cursor: pointer;
+  max-height: 50px;
 }
 
+.nav_links {
+  list-style: none;
+}
+
+.nav_links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav_links li a {
+  transition: all 0.3 ease 0s;
+}
+
+.nav_links li a:hover {
+  color: rgba(95, 91, 255, 1);
+  text-decoration: none;
+}
+
+.img_column {
+  height: 500px;
+  width: auto;
+  object-fit: contain;
+}
 
 .hero {
-	display: flex;
-	max-height: 75vh;
-	padding: 35 50px;
-	align-items: center;
-
+  display: flex;
+  max-height: 75vh;
+  padding: 35 50px;
+  align-items: center;
 }
 
-.main-content { 
-	display: flex;
-	align-items: center;
-	justify-content: space-around;
-	padding-top: 8%;
-	padding-right: 10vw;
-	padding-left: 10vw;
-	flex-wrap: wrap;
+.main-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-top: 8%;
+  padding-right: 10vw;
+  padding-left: 10vw;
+  flex-wrap: wrap;
 }
 
 /* this sets the background image in place at full vh*/
-.main_container { 
-	background-image: none; /*url('images/pizza.jpg'); - corrupted file or something? */
-	background-size: cover;
-	background-position: center;
-	background-repeat: none;
-	height: 100vh;
+.main_container {
+  background-image: url(/images/background.png); /*url('images/pizza.jpg'); - corrupted file or something? */
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  height: 100vh;
 }
 
 .hero-text {
-	color: #fff;
-	width: 50%;
+  color: #fff;
+  width: 50%;
 }
 
 .hero-text h1 {
-	margin:0;
-	font-size: 50px;
+  margin: 0;
+  font-size: 50px;
 }
 
 #iphone {
-	width: 200px;
+  width: 200px;
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #5270fb;
-    border-color: #5270fb;
+  color: #fff;
+  background-color: #5270fb;
+  border-color: #5270fb;
 }
 
 /* jumbotron with title and subtext from bootstrap*/
 .jumbotron {
-	/*background-color: rgb(246, 248, 255);*/
-	background-color: #ffffff;
+  /*background-color: rgb(246, 248, 255);*/
+  background-color: #ffffff;
 }
 
 .container {
-	color: #5270fb;
-	padding: 15px;
+  color: #5270fb;
+  padding: 15px;
 }
 
 /*changes font on the "banner/jumbotron */
-.display-4 { 
-	font-size: 2.5rem;
+.display-4 {
+  font-size: 2.5rem;
 }
 
 .introduction {
-	display: block;
-	width: 90%;
-	margin: 20px auto;
+  display: block;
+  width: 90%;
+  margin: 20px auto;
 }
 
-
 .card-body {
-	align-content: center;
-	align-items: center;
-	justify-content: center;
-	}
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
 
 .card-title {
 }
 
-
-body{
-	margin: 0px;
-	padding: 0px;
+body {
+  margin: 0px;
+  padding: 0px;
 }
 
-.nav{
-	margin-bottom: 200px;
+.nav {
+  margin-bottom: 200px;
 }
 /*didn't get this piece to work to hold the two column div*/
 /*.main-container {
@@ -161,170 +158,145 @@ body{
 	display: block;
 }*/
 
-.two-column{
-	width: 80vw;
-	margin: 0 auto;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	padding: 35px 0;
+.two-column {
+  width: 80vw;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 35px 0;
 }
 
-.img_column{
-	min-height: 500px;
-	width: auto;
-	object-fit: contain;
+.img_column {
+  min-height: 500px;
+  width: auto;
+  object-fit: contain;
 }
 
-
-.column{
-	padding: 10px;
-	max-width: 500px;
-	width: 100%;
+.column {
+  padding: 10px;
+  max-width: 500px;
+  width: 100%;
 }
 
-
-
-
-form{
-	line-height: 12px;
+form {
+  line-height: 12px;
 }
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-#myChart{
-	margin-top: 200px;
-	max-width: 300px;
+#myChart {
+  margin-top: 200px;
+  max-width: 300px;
 }
 
 /*keeps the button on one line*/
 #mortgageResult {
-	display: inline;
+  display: inline;
 }
 
 .full-width-container {
-	display: block;
-	width: 100%;
-	background-color: rgba(247, 249, 255, 1);
-
+  display: block;
+  width: 100%;
+  background-color: rgba(247, 249, 255, 1);
 }
 
 /*css for card title on reports*/
 
 .card-body h2 {
-	
-	color: #5270fb;
+  color: #5270fb;
 }
 
 .row {
-	margin: 0 100px;
+  margin: 0 100px;
 }
 
-
-
 .no-border {
-	border: none;
+  border: none;
 }
 
 .bottom-border {
-	border-bottom: 1px solid #e5e5e5;
-	margin-bottom: 20px;
-	margin-top: 20px;
-	padding-bottom: 10px;
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding-bottom: 10px;
 }
 
 .flip-chart-container {
-	margin: 30px auto;
+  margin: 30px auto;
 
-	position: relative;
-	max-width: 60vw;
+  position: relative;
+  max-width: 60vw;
 }
 
 /*css for box that displays estimated profit on fix and flip report*/
 
 .estimatedProfit {
-	background: #1C85E8;
-	width: 100%;
-	padding: 10%;
-	border-radius: 4px;
-	min-height: 350px;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
-	margin-bottom: 30px;
-	color: #fff;
+  background: #1c85e8;
+  width: 100%;
+  padding: 10%;
+  border-radius: 4px;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  color: #fff;
 }
 
 .estimateHighlight {
-    opacity: .7;
+  opacity: 0.7;
 }
 
 .totalEstimate {
-    font-weight: 600;
-    font-size: 3em;
+  font-weight: 600;
+  font-size: 3em;
 }
 
 .bottomTotals {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }
 
 .divider {
-
 }
 
 #max-offer-price {
-    display: flex;
-    flex-wrap: wrap;
-    opacity: 1;
-    font-weight: 200;
-    font-size: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 1;
+  font-weight: 200;
+  font-size: 1.5em;
 }
 
 #rehab-plus-expenses {
-	display: flex;
-    flex-wrap: wrap;
-    opacity: 1;
-    font-weight: 200;
-    font-size: 1.5em;
+  display: flex;
+  flex-wrap: wrap;
+  opacity: 1;
+  font-weight: 200;
+  font-size: 1.5em;
 }
 
 .double-column {
-	width: 100vw;
-	padding: 0 30px;
-	height: 300px;
+  width: 100vw;
+  padding: 0 30px;
+  height: 300px;
 }
-
 
 .jumbotron {
-	padding: 1rem 1rem;
-	background-color: #1C85E8;
-	margin-bottom: 0;
-
+  padding: 1rem 1rem;
+  background-color: #1c85e8;
+  margin-bottom: 0;
 }
-
 
 .white-text {
-	color: white;
+  color: white;
 }
-
 
 .chart {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
