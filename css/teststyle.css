@@ -5,6 +5,14 @@
   font-family: "Open Sans", sans-serif;
 }
 
+body {
+  background-image: url(/images/background.png); /*url('images/pizza.jpg'); - corrupted file or something? */
+  background-size: cover;
+  background-position: center;
+  background-repeat: none;
+  height: 100vh;
+}
+
 li,
 a,
 button {
@@ -67,7 +75,7 @@ form {
 }
 
 .hero {
-  display: flex;
+  display: block;
   max-height: 75vh;
   padding: 35 50px;
   align-items: center;
@@ -81,15 +89,6 @@ form {
   padding-right: 10vw;
   padding-left: 10vw;
   flex-wrap: wrap;
-}
-
-/* this sets the background image in place at full vh*/
-.main_container {
-  background-image: url(/images/background.png); /*url('images/pizza.jpg'); - corrupted file or something? */
-  background-size: cover;
-  background-position: center;
-  background-repeat: none;
-  height: 100vh;
 }
 
 .hero-text {
@@ -301,17 +300,10 @@ form {
   margin-bottom: 20px;
 }
 
-/* .navbar-toggle .icon-bar {
-  background-color: #1c85e8;
-} */
-/* .burger .navbar-toggler-icon {
-  background-color: #1c85e8;
-} */
-
-/* .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-} */
-
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2828, 133, 232, 0.5%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+.navbar {
+  margin-bottom: 1px;
 }
