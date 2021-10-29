@@ -194,10 +194,3 @@ function updateAll(chart) {
     chart.update();
 }
 
-// Unnecessary code below
-
-// function updateData(chart) {
-//     chart.data.labels[0] = 'new title';
-//     chart.data.datasets[0].data[0] = 25;
-//     chart.update();
-// }
