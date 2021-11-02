@@ -5,6 +5,11 @@
   font-family: "Open Sans", sans-serif;
 }
 
+body {
+  margin: 0px;
+  padding: 0px;
+}
+
 li,
 a,
 button {
@@ -106,8 +111,9 @@ form {
 
 .introduction {
   display: block;
-  width: 90%;
-  margin: 20px auto;
+  width: 100%;
+  margin: 66px auto;
+  background-color: #5270fb;
 }
 
 .card-body {
@@ -117,11 +123,6 @@ form {
 }
 
 .card-title {
-}
-
-body {
-  margin: 0px;
-  padding: 0px;
 }
 
 .nav {
@@ -186,7 +187,12 @@ form {
 }
 
 .row {
-  margin: 0 100px;
+  padding: 0 40px;
+  background-color: #5270fb;
+}
+
+.mb-5 {
+  margin-top: 3rem !important;
 }
 
 .no-border {
@@ -265,8 +271,8 @@ form {
 
 .jumbotron {
   padding: 1rem 1rem;
-  background-color: #1c85e8;
   margin-bottom: 0;
+  color: rgba(247, 249, 255, 1);
 }
 
 .white-text {
