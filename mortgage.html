@@ -100,7 +100,7 @@
                     type="number"
                     class="form-control"
                     id="homePrice"
-                    value="100000"
+                    value="330000"
                   />
                 </div>
                 <label for="downPayment">Down Payment</label>
@@ -109,7 +109,7 @@
                     type="number"
                     class="form-control"
                     id="downPayment"
-                    value="20000"
+                    value="66000"
                   />
                 </div>
                 <label for="interestRate">Interest Rate %</label>
@@ -135,7 +135,7 @@
                 >
 
                 <div id="advancedOptions" class="hidden mt-3">
-                  <label for="propertyTaxes">Property Taxes</label>
+                  <label for="propertyTaxes">Yearly Property Taxes</label>
                   <div class="form-group">
                     <input
                       type="number"
@@ -159,7 +159,7 @@
                       type="number"
                       class="form-control"
                       id="HOAFees"
-                      value="2"
+                      value="500"
                       ;
                     />
                   </div>
@@ -169,22 +169,14 @@
                   type="button"
                   id="calculateflip"
                   class="btn btn-primary btn-block mt-3"
-                  onclick="calcAll()"
+                  onclick="calcAll(); updateAll(mortgageChart)"
                 >
                   Calculate Results
-                </button>
-                <button
-                  type="button"
-                  id="calculateflip"
-                  class="btn btn-primary btn-block"
-                  onclick="calculateAdvancedOptions(), updateAll(mortgageChart)"
-                >
-                  Calculate advanced options
                 </button>
               </form>
             </div>
             <div class="column">
-              <div class="estimatedProfit">
+              <!-- <div class="estimatedProfit">
                 <p class="estimateHighlight">Monthly Payment</p>
                 <p class="totalEstimate" id="monthlyMortgagePayment">$</p>
                 <div class="bottomTotals">
@@ -196,36 +188,21 @@
                     Total Payments<span id="totalPayments">$</span>
                   </p>
                 </div>
-              </div>
+              </div> -->
               <div class="chart">
                 <canvas id="mortgageChart"></canvas>
               </div>
-              <table class="table table-striped table-hover">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">First</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">principal</th>
-                    <td id="monthlyMortgagePayment">One</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Interest</th>
-                    <td>Two</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Insurance</th>
-                    <td colspan="2">Three</td>
-                  </tr>
-                  <tr>
-                    <th scope="row">Taxes</th>
-                    <td colspan="2">Four</td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="background-color py-4 pl-2 text-white">
+                <p class="font-weight-bold">
+                  How is my monthly payment calculated?
+                </p>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Cras justo odio</li>
+                  <li class="list-group-item">Dapibus ac facilisis in</li>
+                  <li class="list-group-item">Morbi leo risus</li>
+                  <li class="list-group-item">Porta ac consectetur ac</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>

@@ -1,67 +1,12 @@
 "use strict";
 
-// let homePrice = parseFloat(document.getElementById("homePrice").value);
-// let downPayment = parseFloat(document.getElementById("downPayment").value);
-
-// let monthlyPayment;
-// let principal = homePrice - downPayment;
-
-// let propertyTaxes =
-//   parseFloat(document.getElementById("propertyTaxes").value) / 12;
-// let propertyInsurance =
-//   parseFloat(document.getElementById("propertyInsurance").value) / 12;
-// let hoaFees = parseFloat(document.getElementById("HOAFees").value) / 12;
-
-// function calculateInsurance() {
-//     let propertyInsurance = parseFloat(document.getElementById('propertyInsurance').value) / 12;
-
-//     return propertyInsurance;
-// }
-
-function calculateMonthlyMortgage() {
-  let interestRate =
-    parseFloat(document.getElementById("interestRate").value) / 12 / 100;
-  let numberOfPayments =
-    parseFloat(document.getElementById("loanLength").value) * 12;
-  let percentageRate = interestRate.toFixed(4);
-
-  monthlyPayment =
-    (principal * interestRate * Math.pow(1 + interestRate, numberOfPayments)) /
-    (Math.pow(1 + interestRate, numberOfPayments) - 1);
-
-  document.getElementById("monthlyMortgagePayment").innerHTML =
-    "$" + monthlyPayment.toFixed(0);
-  return monthlyPayment;
-}
-
-function calculateAdvancedOptions() {
-  let homePrice = parseFloat(document.getElementById("homePrice").value);
-  let downPayment = parseFloat(document.getElementById("downPayment").value);
-  let monthlyPayment;
-  let principal = homePrice - downPayment;
-  let interestRate =
-    parseFloat(document.getElementById("interestRate").value) / 12 / 100;
-  let numberOfPayments =
-    parseFloat(document.getElementById("loanLength").value) * 12;
-  let percentageRate = interestRate.toFixed(4);
-
-  monthlyPayment =
-    (principal * interestRate * Math.pow(1 + interestRate, numberOfPayments)) /
-    (Math.pow(1 + interestRate, numberOfPayments) - 1);
-
-  let totalMonthlyPayment =
-    monthlyPayment + propertyTaxes + propertyInsurance + hoaFees;
-  document.getElementById("monthlyMortgagePayment").innerHTML =
-    "$" + totalMonthlyPayment.toFixed(0);
-}
-
 var donutMortgageChart = document
   .getElementById("mortgageChart")
   .getContext("2d");
 var mortgageChart = new Chart(donutMortgageChart, {
   type: "doughnut",
   options: {
-    cutoutPercentage: 25,
+    cutoutPercentage: 70,
     legend: {
       position: "bottom",
     },
@@ -91,12 +36,11 @@ var mortgageChart = new Chart(donutMortgageChart, {
   },
 });
 
-// need to calculate these numbers after button is pushed. currently calculating on pageload.
 function updateAll(chart) {
-  chart.data.datasets[0].data[0] = calculateMonthlyMortgage().toFixed(0);
-  chart.data.datasets[0].data[1] = propertyInsurance;
-  chart.data.datasets[0].data[2] = propertyTaxes;
-  chart.data.datasets[0].data[3] = hoaFees;
+  chart.data.datasets[0].data[0] = calcAll().toFixed(0);
+  chart.data.datasets[0].data[1] = (propertyInsurance.value / 12).toFixed(0);
+  chart.data.datasets[0].data[2] = (propertyTaxes.value / 12).toFixed(0);
+  chart.data.datasets[0].data[3] = (HOAFees.value / 12).toFixed(0);
   chart.update();
 }
 
@@ -104,32 +48,15 @@ function toggleAdvancedOptions() {
   document.getElementById("advancedOptions").classList.toggle("hidden");
 }
 
-// function getter(id) {
-//   let inputLabel = document.getElementById(`${id}`);
-//   //   return inputLabel;
-//   console.log(id.id);
-// }
-
-// function calcAdvanced() {
-//   let tester = getter(propertyInsurance);
-//   console.log(HOAFees.value);
-//   console.log(tester);
-// }
-
 function calcAll() {
-  const principal1 = homePrice.value - downPayment.value;
-  const interestRate1 = interestRate.value / 12 / 100;
-  const numberOfPayments1 = loanLength.value * 12;
+  const principal = homePrice.value - downPayment.value;
+  const iRate = interestRate.value / 12 / 100;
+  const numberOfPayments = loanLength.value * 12;
   const options =
     (+propertyTaxes.value + +propertyInsurance.value + +HOAFees.value) / 12; //unary operator
   let monthlyPayment =
-    (principal1 *
-      interestRate1 *
-      Math.pow(1 + interestRate1, numberOfPayments1)) /
-    (Math.pow(1 + interestRate1, numberOfPayments1) - 1);
-  document.getElementById("monthlyMortgagePayment").innerHTML =
-    "$" + (options + monthlyPayment).toFixed(0);
-  document.getElementById("pAndI").innerHTML = "$" + monthlyPayment.toFixed(0);
+    (principal * iRate * Math.pow(1 + iRate, numberOfPayments)) /
+    (Math.pow(1 + iRate, numberOfPayments) - 1);
 
-  return monthlyPayment + options;
+  return monthlyPayment; //in case I need to use it later :)
 }
