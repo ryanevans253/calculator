@@ -8,6 +8,7 @@ var mortgageChart = new Chart(donutMortgageChart, {
   options: {
     cutoutPercentage: 70,
     legend: {
+      display: false,
       position: "bottom",
     },
     title: {
@@ -25,10 +26,10 @@ var mortgageChart = new Chart(donutMortgageChart, {
         label: "% of Sales Price",
         data: [1, 1, 1, 1],
         backgroundColor: [
-          "rgba(97,245,245)",
           "rgba(98,195,245)",
           "rgba(97,147,245)",
           "rgba(98,96,244)",
+          "rgba(97,245,245)",
         ],
         borderWidth: 0,
       },
@@ -58,5 +59,21 @@ function calcAll() {
     (principal * iRate * Math.pow(1 + iRate, numberOfPayments)) /
     (Math.pow(1 + iRate, numberOfPayments) - 1);
 
+  document.querySelector(".pAndI").innerHTML = "$" + monthlyPayment.toFixed(0);
+  document.querySelector(".insurance").innerHTML =
+    "+ $" + (propertyInsurance.value / 12).toFixed(0);
+  document.querySelector(".taxes").innerHTML =
+    "+ $" + (propertyTaxes.value / 12).toFixed(0);
+  document.querySelector(".hoa").innerHTML =
+    "+ $" + (HOAFees.value / 12).toFixed(0);
+
+  document.querySelector(".total").innerHTML =
+    "$ " + (monthlyPayment + options).toFixed(0);
   return monthlyPayment; //in case I need to use it later :)
 }
+
+function updateTable() {
+  document.querySelector(".pAndI").innerHTML = monthlyPayment;
+}
+
+updateAll(mortgageChart);

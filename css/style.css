@@ -274,3 +274,21 @@ input::-webkit-inner-spin-button {
 input[type="number"] {
   -moz-appearance: textfield;
 }
+
+.c1 {
+  color: rgba(98, 195, 245);
+}
+
+.c2 {
+  color: rgba(97, 147, 245);
+}
+.c3 {
+  color: rgba(98, 96, 244);
+}
+
+.c4 {
+  color: rgba(97, 245, 245);
+}
+.c5 {
+  color: #5270fb;
+}
