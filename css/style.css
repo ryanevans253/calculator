@@ -42,6 +42,10 @@ form {
   width: 25px;
 }
 
+.hidden {
+  display: none;
+}
+
 .background-color {
   background-color: #5270fb;
 }
@@ -257,4 +261,16 @@ form {
 
 .navbar {
   margin-bottom: 1px;
+}
+
+/* Hides the spinners in number input boxes */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
 }
